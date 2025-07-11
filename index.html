@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&ltCodeWithPritom&gt</title>
+    <meta name="description" content="Portfolio of Arup Bhowmik Pritom">
+
+    <!-- Open Source Libraries & Resources -->
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts (Poppins for body, Merriweather for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- model-viewer Component (for the 3D model section) -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+
+    <!-- Combined CSS Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#home" class="logo">
+                &ltCode<span class="highlight">With</span>Pritom&gt;
+            </a>
+            <!-- Tour Buttons Integrated -->
+            <div class="tour-controls">
+                <button id="start-tour-btn" class="btn" aria-label="Start Interactive Tour">
+                    <i class="fas fa-film"></i> Start Tour
+                </button>
+                <button id="cancel-tour-btn" class="btn btn-danger" aria-label="Cancel Interactive Tour">
+                    <i class="fas fa-times"></i> Cancel Tour
+                </button>
+
+    </header>
+
+
+
+    <!-- Wrap main content for potential effects -->
+    <main id="main-content">
+        <!-- 1. Home/Hero Section -->
+        <section id="home" class="hero">
+            <!-- Parallax background is applied via CSS -->
+            <div class="hero-content">
+                <!-- Add tour-anim-item for sequential reveal during tour -->
+                <h1 class="tour-anim-item">Devoted to excellence as a Software Engineer</h1>
+                <p class="subtitle tour-anim-item">I am Arup Bhowmik Pritom, a first-year CSE student at EWU, learning C
+                    language and solving programming problems every day.</p>
+                <a href="#projects" class="cta-button tour-anim-item">View My Work</a>
+            </div>
+
+            <!-- Fire Animation Area - Positioned within Hero, lower -->
+            <div class="fire-display-area">
+                <div class="log-stack">
+                    <div class="log log1"></div>
+                    <div class="log log2"></div>
+                </div>
+                <div class="fire-container">
+                    <div class="embers">
+                        <div class="ember e1"></div>
+                        <div class="ember e2"></div>
+                        <div class="ember e3"></div>
+                        <div class="ember e4"></div>
+                    </div>
+                    <div class="fire">
+                        <div class="flame f1"></div>
+                        <div class="flame f2"></div>
+                        <div class="flame f3"></div>
+                        <div class="flame f4"></div>
+                        <div class="flame f5"></div>
+                    </div>
+                    <div class="sparks">
+                        <div class="spark s1"></div>
+                        <div class="spark s2"></div>
+                        <div class="spark s3"></div>
+                        <div class="spark s4"></div>
+                        <div class="spark s5"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Fire Animation Area -->
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <!-- Add tour-anim-item to section title -->
+                <h2 class="tour-anim-item">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <!-- Add tour-anim-item to individual paragraphs for sequential reveal -->
+                        <p class="tour-anim-item" data-aos="fade-up" data-aos-delay="100">Hi! I'm <span
+                                class="highlight">Arup Bhowmik Pritom</span>, a passionate student at the CSE department
+                            of East West University, Bangladesh. My journey in programming has just begun, and I'm
+                            excited to explore the world of technology.</p>
+
+                        <p class="tour-anim-item" data-aos="fade-up" data-aos-delay="200">
+                            As a passionate student at the CSE department of East West University, Bangladesh, I'm just
+                            beginning my adventure in the world of technology. I am actively learning <span
+                                class="highlight">C language</span> and enjoy solving programming problems on platforms
+                            like <span class="highlight">Coddy</span>, <span class="highlight">Beecrowd</span>, <span
+                                class="highlight">Codeforces</span>, and <span class="highlight">LeetCode</span>. I
+                            regularly participate in Codeforces contests to challenge myself and grow.
+                        </p>
+                        <p class="tour-anim-item" data-aos="fade-up" data-aos-delay="300">
+                            Beyond coding, I share my learning journey through my <span class="highlight">YouTube
+                                channel</span> (<strong>Code With Pritom</strong>), <span class="highlight">Facebook
+                                page</span>, and manage a group called <strong>Tech Connect</strong> where I help others
+                            with tech, computer, device, and programming-related questions.
+                        </p>
+                        <p class="tour-anim-item" data-aos="fade-up" data-aos-delay="400">
+                            I'm also an active member of university clubs such as the <span class="highlight">Robotics
+                                Club</span>, <span class="highlight">Telecommunication Club</span>, <span
+                                class="highlight">Programming Club</span>, and <span class="highlight">IEEE Club</span>.
+                            These communities inspire me to collaborate, learn, and contribute.
+                        </p>
+                    </div>
+                    <!-- Add tour-anim-item to the image container -->
+                    <div class="about-image tour-anim-item">
+                        <!-- Replace with your actual photo -->
+                        <img src="./images/unnamed.jpg" alt="Pritom Bhowmik">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills & Activities Section -->
+        <section id="skills" class="section-padding">
+            <div class="container">
+                <h2 class="tour-anim-item">My Journey <span class="highlight">&</span> Skills</h2>
+                <div class="skills-intro tour-anim-item" style="max-width:700px;margin:auto;">
+
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category tour-anim-item">
+                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                        <ul class="skills-list">
+                            <li class="tour-anim-item"><i class="fab fa-html5"></i> HTML5</li>
+                            <li class="tour-anim-item"><i class="fab fa-css3-alt"></i> CSS</li>
+                            <li class="tour-anim-item"><i class="fab fa-js"></i> JavaScript</li>
+                            <li class="tour-anim-item"><i class="fas fa-terminal"></i> C Language</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category tour-anim-item">
+                        <h3><i class="fas fa-laptop-code"></i> Tools & Platforms</h3>
+                        <ul class="skills-list">
+                            <li class="tour-anim-item"><i class="fab fa-git-alt"></i> Git & GitHub</li>
+                            <li class="tour-anim-item"><i class="fab fa-linux"></i> Linux OS</li>
+                            <li class="tour-anim-item"><i class="fas fa-paint-brush"></i> Canva</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category tour-anim-item">
+                        <h3><i class="fas fa-users"></i> Community & Activities</h3>
+                        <ul class="skills-list">
+                            <li class="tour-anim-item"><i class="fab fa-youtube"></i> Code With Pritom (YouTube Channel)
+                            </li>
+                            <li class="tour-anim-item"><i class="fab fa-facebook"></i> Facebook Page & Tech Connect
+                                Group</li>
+                            <li class="tour-anim-item"><i class="fas fa-robot"></i> Robotics Club</li>
+                            <li class="tour-anim-item"><i class="fas fa-broadcast-tower"></i> EWUTC Club
+                            </li>
+                            <li class="tour-anim-item"><i class="fas fa-laptop"></i> Programming Club</li>
+                            <li class="tour-anim-item"><i class="fas fa-bolt"></i> IEEE Club</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 3D Model Section (#tech-showcase) -->
+        <section id="tech-showcase" class="section-padding text-center">
+            <div class="container">
+                <!-- Add tour-anim-item to title, paragraph, and model viewer -->
+                <h2 class="tour-anim-item">Visualizing Tech</h2>
+                <p class="tour-anim-item">Bringing ideas to life, layer by layer.</p>
+                <!-- Replace src with a link to your chosen free .glb or .gltf model -->
+                <model-viewer src="./models/robot.glb" alt="A 3D model representing technology or code" auto-rotate
+                    camera-controls shadow-intensity="1" exposure="1" style="--mv-environment-image: neutral;"
+                    class="tour-anim-item">
+                    <div class="attribution" slot="attribution">
+                        3D model by Google licensed under CC BY 4.0
+                    </div>
+                </model-viewer>
+                <!-- If attribution is required and not in the model, you might add a p tag here with tour-anim-item -->
+                <!-- <p class="attribution tour-anim-item">3D Model "Astronaut" by Google licensed under CC BY 4.0 via <a href="https://modelviewer.dev" target="_blank" rel="noopener noreferrer">modelviewer.dev</a>.</p> -->
+
+            </div>
+        </section>
+
+
+        <!-- 5. Projects Section -->
+        <section id="projects" class="section-padding">
+            <div class="container">
+                <!-- Add tour-anim-item to section title -->
+                <h2 class="tour-anim-item">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Add tour-anim-item to each project card -->
+                    <article class="project-card tour-anim-item">
+                        <div class="project-card-image">
+                            <img src="./images/meditation.png" alt="Screenshot of Project Alpha">
+                            <!-- REPLACE WITH YOUR IMAGE PATH -->
+                        </div>
+                        <div class="project-card-content">
+                            <h4>Meditation Website</h4>
+                            <p>A calming web experience designed to help users relax and focus. Built with HTML, CSS,
+                                and JavaScript, this site features soothing visuals, interactive breathing guides, and
+                                gentle animations powered by modern libraries. Perfect for anyone seeking mindfulness
+                                and stress relief online.</p>
+                            <div class="project-tech">
+                                <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>Libraries</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://codewithpritom.github.io/meditation/home" target="_blank"
+                                    rel="noopener noreferrer" title="Live Demo"><i
+                                        class="fas fa-external-link-alt"></i></a> <!-- REPLACE LINK -->
+                                <a href="https://github.com/CodeWithPritom/meditation.git" target="_blank"
+                                    rel="noopener noreferrer" title="GitHub Repository"><i
+                                        class="fab fa-github"></i></a> <!-- REPLACE LINK -->
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 2 -->
+                    <article class="project-card tour-anim-item">
+                        <div class="project-card-image">
+                            <img src="./images/product.png" alt="Screenshot of Project Beta">
+                            <!-- REPLACE WITH YOUR IMAGE PATH -->
+                        </div>
+                        <div class="project-card-content">
+                            <h4>Digital Product E-Commerce Website</h4>
+                            <p>A sleek online store for digital products, built with HTML, CSS, JavaScript, and
+                                libraries. Features fast browsing, interactive galleries, and a responsive design for
+                                easy shopping on any device.</p>
+                            <div class="project-tech">
+                                <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>Libraries</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://codewithpritom.github.io/digital-hub/" target="_blank" rel="noopener noreferrer"
+                                    title="Live Demo"><i class="fas fa-external-link-alt"></i></a> <!-- REPLACE LINK -->
+                                <a href="https://github.com/CodeWithPritom/digital-hub.git" target="_blank"
+                                    rel="noopener noreferrer" title="GitHub Repository"><i
+                                        class="fab fa-github"></i></a> <!-- REPLACE LINK -->
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 3 -->
+                    <article class="project-card tour-anim-item">
+                        <div class="project-card-image">
+                            <img src="./images/comic.png" alt="Screenshot of Project Gamma">
+                            <!-- REPLACE WITH YOUR IMAGE PATH -->
+                        </div>
+                        <div class="project-card-content">
+                            <h4>Comic Linguist</h4>
+                            <p>Comic Linguist makes learning English fun and engaging by combining interactive comics
+                                with vocabulary and grammar tips. Users improve language skills while enjoying visually
+                                rich stories, quizzes, and instant feedback—all powered by modern web technologies.</p>
+                            <div class="project-tech">
+                                <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>Libraries</span>
+                            </div>
+                            <div class="project-links">
+                                <!-- <a href="#" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a> -->
+                                <a href="https://pritom36.github.io/Comic-Linguist/" target="_blank"
+                                    rel="noopener noreferrer" title="GitHub Repository"><i
+                                        class="fab fa-github"></i></a> <!-- REPLACE LINK -->
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Add more project cards as needed, adding tour-anim-item to each article -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Education & Certifications Section -->
+        <section id="education" class="section-padding">
+            <div class="container">
+                <!-- Add tour-anim-item to section title -->
+                <h2 class="tour-anim-item">Education <span class="highlight">&</span> Certifications</h2>
+                <!-- Add tour-anim-item to each education/certification item -->
+                <div class="education-item tour-anim-item">
+                    <i class="fas fa-university education-icon"></i>
+                    <div class="education-details">
+                        <h3>East West University, Dhaka</h3>
+                        <p><strong>Bachelor of Science in Computer Science and Engineering</strong></p>
+                        <p><em>Started: June 2025</em></p>
+                        <p>Focus Areas: Machine Learning, Problem Solving, Cloud and DevOps</p>
+                    </div>
+                </div>
+                <!-- Certification Example -->
+                <div class="education-item tour-anim-item">
+                    <i class="fas fa-certificate education-icon"></i>
+                    <div class="education-details">
+                        <h3>IOT Bootcamp</h3>
+                        <p><strong>Gobeshona Learning Academy</strong></p>
+                        <p><em>Completed: July 2025</em></p>
+                        <p>Comprehensive training covering IoT fundamentals, device programming, and cloud integration.
+                        </p>
+                        </p>
+                    </div>
+                </div>
+                <!-- Add more education/certification items with tour-anim-item as needed -->
+            </div>
+        </section>
+        
+        <!-- 5. Solved Problems Section (#solved-problems) -->
+<section id="solved-problems" class="section-padding text-center">
+    <div class="container">
+        <h2 class="tour-anim-item">Solved Problem Sets</h2>
+        <p class="tour-anim-item">A growing list of problems I've tackled and solved.</p>
+
+        <!-- Public Google Spreadsheet Embed -->
+        <div class="embed-responsive embed-responsive-16by9 tour-anim-item" style="min-height: 500px;">
+            <iframe class="embed-responsive-item"
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCXJB0jbVSBai3YLpyZFBHMaDOyWtuYkSedmaRFBI0d-T6JgjdpHvrs_kiNC85-qNpss5VLU3sxAYe/pubhtml?widget=true&amp;headers=false"
+                width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+         <!-- 7. Experience Section -->
+          <!--
+        <section id="experience" class="section-padding">
+            <div class="container">
+                <h2 class="tour-anim-item">Experience</h2>
+     
+                <div class="experience-item tour-anim-item">
+                    <h3>Software Engineer Intern</h3>
+                    <p><strong>Tiger IT Bangladesh Ltd.</strong> | Dhaka, Bangladesh | Jul 2022 – Sep 2022</p>
+                    <ul>
+                        <li>Assisted in developing features for a national identification system using Java Spring Boot.
+                        </li>
+                        <li>Participated in daily stand-ups, code reviews, and collaborated with QA on testing.</li>
+                        <li>Gained experience with microservices architecture and database management (PostgreSQL).</li>
+                    </ul>
+                </div>
+              
+            </div>
+        </section>
+    -->
+
+        <!-- 8. Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <!-- Add tour-anim-item to section title -->
+                <h2 class="tour-anim-item">Let's Connect <span class="highlight">&</span> Build</h2>
+                <!-- Add tour-anim-item to intro paragraph -->
+                <p class="text-center tour-anim-item" style="max-width: 600px; margin-left: auto; margin-right:auto;">
+                    Interested in collaborating or have a project in mind? Feel free to reach out!</p>
+                <form id="contact-form" action="https://formspree.io/f/xldnqlqr" method="POST" class="contact-form">
+                    <!-- REPLACE WITH YOUR FORMSPREE ENDPOINT -->
+                    <!-- Add tour-anim-item to each input group and the submit button -->
+                    <div class="input-group tour-anim-item">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder=" " required>
+                        <!-- Added placeholder for label effect -->
+                    </div>
+                    <div class="input-group tour-anim-item">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder=" " required>
+                        <!-- Added placeholder for label effect -->
+                    </div>
+                    <div class="input-group tour-anim-item">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" placeholder=" ">
+                        <!-- Added placeholder for label effect -->
+                    </div>
+                    <div class="input-group tour-anim-item">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+                        <!-- Added placeholder for label effect -->
+                    </div>
+                    <button type="submit" class="tour-anim-item">Send Message <i class="fas fa-paper-plane"
+                            style="margin-left: 8px;"></i></button>
+                    <!-- Form Status message area -->
+                    <div id="form-status"></div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 9. Resume Download Section -->
+        <section id="resume-download" class="section-padding text-center">
+            <div class="container">
+                <!-- Add tour-anim-item to the button -->
+                <a href="./resume/Arup_Bhowmik_Pritom_Resume_FSWD.pdf" download="Arup_Bhowmik_Pritom_Resume_FSWD.pdf"
+                    class="cta-button tour-anim-item"> <!-- REPLACE WITH YOUR RESUME PATH -->
+                    <i class="fas fa-download" style="margin-right: 8px;"></i> Download My Resume
+                </a>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-links" aria-label="Social Media Links">
+                <!-- Replace # with your actual profile links -->
+                <a href="https://github.com/arup-bhowmik" target="_blank" rel="noopener noreferrer" title="GitHub"><i
+                        class="fab fa-github"></i></a> <!-- REPLACE LINK -->
+                <a href="https://www.linkedin.com/in/arupbhowmikpritom/" target="_blank" rel="noopener noreferrer"
+                    title="LinkedIn"><i class="fab fa-linkedin"></i></a> <!-- REPLACE LINK -->
+                <!-- Add other relevant links here -->
+            </div>
+            <p>© <span id="currentYear"></span> Pritom Bhowmik. Forged with <i class="fas fa-fire"
+                    style="color: var(--primary-accent);"></i> and Code.</p>
+            <!-- Add 3D model attribution here if needed -->
+            <p class="attribution">
+                <!-- Example: 3D Model "Astronaut" by Google licensed under CC BY 4.0 -->
+                If using Astronaut model: 3D model "Astronaut" by Google licensed under CC BY 4.0 via <a
+                    href="https://modelviewer.dev" target="_blank" rel="noopener noreferrer">modelviewer.dev</a>.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Hidden Audio Player for Tour -->
+    <audio id="background-audio" loop preload="metadata">
+        <source src="audio/background-music.mp3" type="audio/mpeg"> <!-- REPLACE WITH YOUR AUDIO PATH -->
+        Your browser doesn't support audio playback.
+    </audio>
+
+    <!-- Narration Box for Interactive Tour -->
+    <div id="narration-box" class="narration-box">
+        <p id="narration-text"></p>
+    </div>
+
+    <!-- Removed Transition Overlay -->
+    <!-- <div id="transition-overlay" class="transition-overlay" style="display: none;"></div> -->
+
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"> </script>
+
+</body>
+
+</html>
