@@ -28,15 +28,315 @@
 
     <!-- Combined CSS Styles -->
     <link rel="stylesheet" href="css/styles.css">
+
+
+    <style>
+        /* Dropdown Menu Styles */
+
+        /* Make logo button-like but maintain appearance */
+        .logo.dropdown-toggle {
+            background: none;
+            border: none;
+            color: inherit;
+            font-family: inherit;
+            font-size: 1.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive font sizes for logo */
+        @media (max-width: 768px) {
+            .logo.dropdown-toggle {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo.dropdown-toggle {
+                font-size: 1.4rem;
+            }
+        }
+
+        .logo.dropdown-toggle:hover {
+            transform: translateY(-2px);
+        }
+
+        .dropdown-icon {
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+
+        .logo.dropdown-toggle[aria-expanded="true"] .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown Overlay */
+        .dropdown-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50%;
+            max-width: 400px;
+            min-width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            overflow-y: auto;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown-menu.active {
+            transform: translateX(0);
+        }
+
+        .dropdown-content {
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dropdown-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 107, 107, 0.1) 0%, transparent 100%);
+            transition: width 0.3s ease;
+        }
+
+        .dropdown-item:hover::before {
+            width: 100%;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 107, 107, 0.1);
+            border-left-color: #ff6b6b;
+            transform: translateX(5px);
+        }
+
+        .dropdown-item i {
+            font-size: 1.2em;
+            width: 20px;
+            text-align: center;
+            color: #ff6b6b;
+        }
+
+        .dropdown-item span {
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                width: 60%;
+                max-width: none;
+                min-width: 280px;
+            }
+
+            .dropdown-item {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .dropdown-item span {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dropdown-menu {
+                width: 70%;
+                min-width: 250px;
+            }
+
+            .dropdown-item {
+                padding: 0.7rem 1.2rem;
+            }
+
+            .dropdown-item i {
+                font-size: 1.1em;
+            }
+
+            .dropdown-item span {
+                font-size: 0.95em;
+            }
+        }
+
+        /* Smooth scrolling for dropdown navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for dropdown items */
+        .dropdown-menu.active .dropdown-item {
+            animation: slideInLeft 0.3s ease forwards;
+        }
+
+        .dropdown-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .dropdown-item:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .dropdown-item:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .dropdown-item:nth-child(4) {
+            animation-delay: 0.25s;
+        }
+
+        .dropdown-item:nth-child(5) {
+            animation-delay: 0.3s;
+        }
+
+        .dropdown-item:nth-child(6) {
+            animation-delay: 0.35s;
+        }
+
+        .dropdown-item:nth-child(7) {
+            animation-delay: 0.4s;
+        }
+
+        .dropdown-item:nth-child(8) {
+            animation-delay: 0.45s;
+        }
+
+        .dropdown-item:nth-child(9) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Ensure dropdown doesn't interfere with existing layout */
+        .main-header {
+            position: relative;
+        }
+
+        .main-header .container {
+            position: relative;
+        }
+
+        /* Tour controls positioning adjustment */
+        .tour-controls {
+            position: relative;
+            z-index: 1000;
+        }
+    </style>
+
 </head>
 
 <body>
 
     <header class="main-header">
         <div class="container">
-            <a href="#home" class="logo">
+            <button class="logo dropdown-toggle" id="dropdown-toggle" aria-expanded="false"
+                aria-controls="dropdown-menu">
                 &ltCode<span class="highlight">With</span>Pritom&gt;
-            </a>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <nav class="dropdown-menu" id="dropdown-menu" role="navigation" aria-labelledby="dropdown-toggle">
+                <div class="dropdown-content">
+                    <a href="#home" class="dropdown-item">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="dropdown-item">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#skills" class="dropdown-item">
+                        <i class="fas fa-code"></i>
+                        <span>Skills</span>
+                    </a>
+                    <a href="#tech-showcase" class="dropdown-item">
+                        <i class="fas fa-cube"></i>
+                        <span>Tech Showcase</span>
+                    </a>
+                    <a href="#projects" class="dropdown-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#education" class="dropdown-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </a>
+                    <a href="#solved-problems" class="dropdown-item">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <span>Solved Problems</span>
+                    </a>
+                    <a href="#contact" class="dropdown-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                    <a href="#resume-download" class="dropdown-item">
+                        <i class="fas fa-download"></i>
+                        <span>Resume</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Dropdown Overlay -->
+            <div class="dropdown-overlay" id="dropdown-overlay"></div>
+
             <!-- Tour Buttons Integrated -->
             <div class="tour-controls">
                 <button id="start-tour-btn" class="btn" aria-label="Start Interactive Tour">
@@ -45,10 +345,9 @@
                 <button id="cancel-tour-btn" class="btn btn-danger" aria-label="Cancel Interactive Tour">
                     <i class="fas fa-times"></i> Cancel Tour
                 </button>
-
+            </div>
+        </div>
     </header>
-
-
 
     <!-- Wrap main content for potential effects -->
     <main id="main-content">
@@ -249,8 +548,9 @@
                                 <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>Libraries</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://codewithpritom.github.io/digital-hub/" target="_blank" rel="noopener noreferrer"
-                                    title="Live Demo"><i class="fas fa-external-link-alt"></i></a> <!-- REPLACE LINK -->
+                                <a href="https://codewithpritom.github.io/digital-hub/" target="_blank"
+                                    rel="noopener noreferrer" title="Live Demo"><i
+                                        class="fas fa-external-link-alt"></i></a> <!-- REPLACE LINK -->
                                 <a href="https://github.com/CodeWithPritom/digital-hub.git" target="_blank"
                                     rel="noopener noreferrer" title="GitHub Repository"><i
                                         class="fab fa-github"></i></a> <!-- REPLACE LINK -->
@@ -315,24 +615,24 @@
                 <!-- Add more education/certification items with tour-anim-item as needed -->
             </div>
         </section>
-        
+
         <!-- 5. Solved Problems Section (#solved-problems) -->
-<section id="solved-problems" class="section-padding text-center">
-    <div class="container">
-        <h2 class="tour-anim-item">Solved Problem Sets</h2>
-        <p class="tour-anim-item">A growing list of problems I've tackled and solved.</p>
+        <section id="solved-problems" class="section-padding text-center">
+            <div class="container">
+                <h2 class="tour-anim-item">Solved Problem Sets</h2>
+                <p class="tour-anim-item">A growing list of problems I've tackled and solved.</p>
 
-        <!-- Public Google Spreadsheet Embed -->
-        <div class="embed-responsive embed-responsive-16by9 tour-anim-item" style="min-height: 500px;">
-            <iframe class="embed-responsive-item"
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCXJB0jbVSBai3YLpyZFBHMaDOyWtuYkSedmaRFBI0d-T6JgjdpHvrs_kiNC85-qNpss5VLU3sxAYe/pubhtml?widget=true&amp;headers=false"
-                width="100%" height="500" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-</section>
+                <!-- Public Google Spreadsheet Embed -->
+                <div class="embed-responsive embed-responsive-16by9 tour-anim-item" style="min-height: 500px;">
+                    <iframe class="embed-responsive-item"
+                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTCXJB0jbVSBai3YLpyZFBHMaDOyWtuYkSedmaRFBI0d-T6JgjdpHvrs_kiNC85-qNpss5VLU3sxAYe/pubhtml?widget=true&amp;headers=false"
+                        width="100%" height="500" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
 
-         <!-- 7. Experience Section -->
-          <!--
+        <!-- 7. Experience Section -->
+        <!--
         <section id="experience" class="section-padding">
             <div class="container">
                 <h2 class="tour-anim-item">Experience</h2>
@@ -395,8 +695,8 @@
         <section id="resume-download" class="section-padding text-center">
             <div class="container">
                 <!-- Add tour-anim-item to the button -->
-                <a href="./resume.pdf" download="Arup_Bhowmik_Pritom_Resume_FSWD.pdf"
-                    class="cta-button tour-anim-item"> <!-- REPLACE WITH YOUR RESUME PATH -->
+                <a href="./resume.pdf" download="Arup_Bhowmik_Pritom_Resume_FSWD.pdf" class="cta-button tour-anim-item">
+                    <!-- REPLACE WITH YOUR RESUME PATH -->
                     <i class="fas fa-download" style="margin-right: 8px;"></i> Download My Resume
                 </a>
             </div>
@@ -409,8 +709,8 @@
         <div class="container">
             <div class="footer-links" aria-label="Social Media Links">
                 <!-- Replace # with your actual profile links -->
-                <a href="https://github.com/CodeWithPritom?tab=repositories" target="_blank" rel="noopener noreferrer" title="GitHub"><i
-                        class="fab fa-github"></i></a> <!-- REPLACE LINK -->
+                <a href="https://github.com/CodeWithPritom?tab=repositories" target="_blank" rel="noopener noreferrer"
+                    title="GitHub"><i class="fab fa-github"></i></a> <!-- REPLACE LINK -->
                 <a href="https://www.linkedin.com/in/arupbhowmikpritom/" target="_blank" rel="noopener noreferrer"
                     title="LinkedIn"><i class="fab fa-linkedin"></i></a> <!-- REPLACE LINK -->
                 <!-- Add other relevant links here -->
@@ -450,6 +750,115 @@
 
     <!-- Custom JavaScript -->
     <script src="js/script.js"> </script>
+
+    <script>
+        // Dropdown Menu Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggle = document.getElementById('dropdown-toggle');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const dropdownOverlay = document.getElementById('dropdown-overlay');
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+            // Toggle dropdown menu
+            function toggleDropdown() {
+                const isOpen = dropdownToggle.getAttribute('aria-expanded') === 'true';
+
+                if (isOpen) {
+                    closeDropdown();
+                } else {
+                    openDropdown();
+                }
+            }
+
+            // Open dropdown menu
+            function openDropdown() {
+                dropdownToggle.setAttribute('aria-expanded', 'true');
+                dropdownMenu.classList.add('active');
+                dropdownOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+
+            // Close dropdown menu
+            function closeDropdown() {
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+                dropdownMenu.classList.remove('active');
+                dropdownOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Restore background scrolling
+            }
+
+            // Event listeners
+            dropdownToggle.addEventListener('click', toggleDropdown);
+
+            // Close dropdown when clicking on overlay
+            dropdownOverlay.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeDropdown();
+            });
+
+            // Prevent menu from closing when clicking inside the menu
+            dropdownMenu.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+
+            // Close dropdown when clicking outside (on document)
+            document.addEventListener('click', function (e) {
+                if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                    closeDropdown();
+                }
+            });
+
+            // Close dropdown when clicking on menu items
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    // Allow the navigation to happen, then close dropdown
+                    setTimeout(closeDropdown, 100);
+                });
+            });
+
+            // Close dropdown on escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && dropdownMenu.classList.contains('active')) {
+                    closeDropdown();
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768 && dropdownMenu.classList.contains('active')) {
+                    closeDropdown();
+                }
+            });
+
+            // Smooth scrolling for dropdown navigation links
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+
+                    // Check if it's an internal link (starts with #)
+                    if (href && href.startsWith('#') && href !== '#resume-download') {
+                        e.preventDefault();
+
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+
+                        if (targetElement) {
+                            // Calculate offset for fixed header
+                            const headerHeight = document.querySelector('.main-header').offsetHeight;
+                            const targetPosition = targetElement.offsetTop - headerHeight - 20;
+
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+
 
 </body>
 
