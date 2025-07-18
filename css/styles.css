@@ -162,6 +162,12 @@
         /* --- Tour Button & Controls Styling (Adapted to theme) --- */
         .tour-controls { display: flex; gap: 1rem; align-items: center; }
 
+        /* Hide tour controls when dropdown menu is open */
+        .dropdown-menu.active ~ .tour-controls,
+        .dropdown-overlay.active ~ .tour-controls {
+            display: none !important;
+        }
+
         #start-tour-btn, #cancel-tour-btn {
             padding: 0.6rem 1.2rem; font-size: 0.9rem; font-weight: 600; border-radius: 4px; cursor: pointer;
             display: flex; align-items: center; gap: 0.5rem; transition: background-color 0.3s, color 0.3s, opacity 0.3s;
@@ -172,8 +178,6 @@
         #cancel-tour-btn { background-color: transparent; color: var(--danger-color); border: 1px solid var(--danger-color); display: none; }
         #cancel-tour-btn:hover:not(:disabled) { background-color: rgba(255, 107, 107, 0.1); }
         .tour-controls .btn:disabled { opacity: 0.6; cursor: not-allowed; }
-
-
         /* --- Mobile Nav Toggle --- */
         .nav-toggle {
              display: none; /* Hidden by default */
