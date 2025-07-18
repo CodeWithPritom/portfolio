@@ -32,18 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Section Order and Narration Content ---
     // Define the order of sections the tour will visit by their IDs
     // Make sure these IDs match the section IDs in your HTML exactly
-    const tourSections = ['#home', '#about', '#skills', '#tech-showcase', '#projects', '#education', '#experience', '#solved-problems', '#contact', '#resume-download'];
+    const tourSections = ['#home', '#about', '#skills', '#ai-expertise', '#tech-showcase', '#projects', '#education', '#experience', '#solved-problems', '#certificates', '#contact', '#resume-download'];
 
     // Define the narration text for each section ID
     const narrationContent = {
         '#home': "Welcome! I'm Pritom Bhowmik. Let's explore my skills and projects.", // Updated name
         '#about': "Here's a bit about my journey as a Full Stack Developer and what drives my passion.",
         '#skills': "Discover the technologies and tools I master, from frontend frameworks to backend systems.",
+        '#ai-expertise': "Explore my expertise in AI and Machine Learning, including projects and applications.",
         '#tech-showcase': "A glimpse into visualizing the layers of technology I work with.", // Narration for 3D model section
         '#projects': "Browse through my featured projects showcasing real-world applications of my skills.",
-        '#education': "My foundation in Computer Science from BRAC University and continuous learning experiences.",
+        '#education': "My foundation in Computer Science from East West University and continuous learning experiences.",
         '#solved-problems': "Here are some of the coding challenges and problems I've solved, demonstrating my problem-solving skills.",
         '#experience': "Highlights of my professional journey and contributions to projects.", // Narration for experience section
+        '#certificates': "Check out the certifications I've earned, reflecting my commitment to continuous learning.",
         '#contact': "Ready to build something together? Let's connect and discuss your project.",
         '#resume-download': "For a comprehensive overview, you can download my resume here. Thanks for taking the tour!",
     };
@@ -532,3 +534,109 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 }); // End DOMContentLoaded event listener
+
+
+        // Dropdown Menu Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownToggle = document.getElementById('dropdown-toggle');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const dropdownOverlay = document.getElementById('dropdown-overlay');
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+            // Toggle dropdown menu
+            function toggleDropdown() {
+                const isOpen = dropdownToggle.getAttribute('aria-expanded') === 'true';
+
+                if (isOpen) {
+                    closeDropdown();
+                } else {
+                    openDropdown();
+                }
+            }
+
+            // Open dropdown menu
+            function openDropdown() {
+                dropdownToggle.setAttribute('aria-expanded', 'true');
+                dropdownMenu.classList.add('active');
+                dropdownOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+
+            // Close dropdown menu
+            function closeDropdown() {
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+                dropdownMenu.classList.remove('active');
+                dropdownOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Restore background scrolling
+            }
+
+            // Event listeners
+            dropdownToggle.addEventListener('click', toggleDropdown);
+
+            // Close dropdown when clicking on overlay
+            dropdownOverlay.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeDropdown();
+            });
+
+            // Prevent menu from closing when clicking inside the menu
+            dropdownMenu.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+
+            // Close dropdown when clicking outside (on document)
+            document.addEventListener('click', function (e) {
+                if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                    closeDropdown();
+                }
+            });
+
+            // Close dropdown when clicking on menu items
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    // Allow the navigation to happen, then close dropdown
+                    setTimeout(closeDropdown, 100);
+                });
+            });
+
+            // Close dropdown on escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && dropdownMenu.classList.contains('active')) {
+                    closeDropdown();
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768 && dropdownMenu.classList.contains('active')) {
+                    closeDropdown();
+                }
+            });
+
+            // Smooth scrolling for dropdown navigation links
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+
+                    // Check if it's an internal link (starts with #)
+                    if (href && href.startsWith('#') && href !== '#resume-download') {
+                        e.preventDefault();
+
+                        const targetId = href.substring(1);
+                        const targetElement = document.getElementById(targetId);
+
+                        if (targetElement) {
+                            // Calculate offset for fixed header
+                            const headerHeight = document.querySelector('.main-header').offsetHeight;
+                            const targetPosition = targetElement.offsetTop - headerHeight - 20;
+
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });

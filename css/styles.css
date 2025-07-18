@@ -1054,3 +1054,255 @@
              .narration-box { bottom: calc(15px + var(--header-height)); /* Example: 15px from bottom + header height */ }
              /* Test this on a real small device to see how the header wraps and adjust accordingly */
         }
+
+
+
+
+
+             /* Dropdown Menu Styles */
+
+        /* Make logo button-like but maintain appearance */
+        .logo.dropdown-toggle {
+            background: none;
+            border: none;
+            color: inherit;
+            font-family: inherit;
+            font-size: 1.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive font sizes for logo */
+        @media (max-width: 768px) {
+            .logo.dropdown-toggle {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo.dropdown-toggle {
+                font-size: 1.4rem;
+            }
+        }
+
+        .logo.dropdown-toggle:hover {
+            transform: translateY(-2px);
+        }
+
+        .dropdown-icon {
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+
+        .logo.dropdown-toggle[aria-expanded="true"] .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown Overlay */
+        .dropdown-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50%;
+            max-width: 400px;
+            min-width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            overflow-y: auto;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown-menu.active {
+            transform: translateX(0);
+        }
+
+        .dropdown-content {
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dropdown-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 107, 107, 0.1) 0%, transparent 100%);
+            transition: width 0.3s ease;
+        }
+
+        .dropdown-item:hover::before {
+            width: 100%;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 107, 107, 0.1);
+            border-left-color: #ff6b6b;
+            transform: translateX(5px);
+        }
+
+        .dropdown-item i {
+            font-size: 1.2em;
+            width: 20px;
+            text-align: center;
+            color: #ff6b6b;
+        }
+
+        .dropdown-item span {
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                width: 60%;
+                max-width: none;
+                min-width: 280px;
+            }
+
+            .dropdown-item {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .dropdown-item span {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dropdown-menu {
+                width: 70%;
+                min-width: 250px;
+            }
+
+            .dropdown-item {
+                padding: 0.7rem 1.2rem;
+            }
+
+            .dropdown-item i {
+                font-size: 1.1em;
+            }
+
+            .dropdown-item span {
+                font-size: 0.95em;
+            }
+        }
+
+        /* Smooth scrolling for dropdown navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for dropdown items */
+        .dropdown-menu.active .dropdown-item {
+            animation: slideInLeft 0.3s ease forwards;
+        }
+
+        .dropdown-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .dropdown-item:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .dropdown-item:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .dropdown-item:nth-child(4) {
+            animation-delay: 0.25s;
+        }
+
+        .dropdown-item:nth-child(5) {
+            animation-delay: 0.3s;
+        }
+
+        .dropdown-item:nth-child(6) {
+            animation-delay: 0.35s;
+        }
+
+        .dropdown-item:nth-child(7) {
+            animation-delay: 0.4s;
+        }
+
+        .dropdown-item:nth-child(8) {
+            animation-delay: 0.45s;
+        }
+
+        .dropdown-item:nth-child(9) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Ensure dropdown doesn't interfere with existing layout */
+        .main-header {
+            position: relative;
+        }
+
+        .main-header .container {
+            position: relative;
+        }
+
+        /* Tour controls positioning adjustment */
+        .tour-controls {
+            position: relative;
+            z-index: 1000;
+        }

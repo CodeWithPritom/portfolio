@@ -28,257 +28,8 @@
 
     <!-- Combined CSS Styles -->
     <link rel="stylesheet" href="css/styles.css">
-
-
-    <style>
-        /* Dropdown Menu Styles */
-
-        /* Make logo button-like but maintain appearance */
-        .logo.dropdown-toggle {
-            background: none;
-            border: none;
-            color: inherit;
-            font-family: inherit;
-            font-size: 1.8rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        /* Responsive font sizes for logo */
-        @media (max-width: 768px) {
-            .logo.dropdown-toggle {
-                font-size: 1.6rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo.dropdown-toggle {
-                font-size: 1.4rem;
-            }
-        }
-
-        .logo.dropdown-toggle:hover {
-            transform: translateY(-2px);
-        }
-
-        .dropdown-icon {
-            font-size: 0.8em;
-            transition: transform 0.3s ease;
-        }
-
-        .logo.dropdown-toggle[aria-expanded="true"] .dropdown-icon {
-            transform: rotate(180deg);
-        }
-
-        /* Dropdown Overlay */
-        .dropdown-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(2px);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .dropdown-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Dropdown Menu */
-        .dropdown-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 50%;
-            max-width: 400px;
-            min-width: 300px;
-            height: 100vh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-            transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 999;
-            overflow-y: auto;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .dropdown-menu.active {
-            transform: translateX(0);
-        }
-
-        .dropdown-content {
-            padding: 2rem 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .dropdown-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 2rem;
-            color: #ffffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .dropdown-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(255, 107, 107, 0.1) 0%, transparent 100%);
-            transition: width 0.3s ease;
-        }
-
-        .dropdown-item:hover::before {
-            width: 100%;
-        }
-
-        .dropdown-item:hover {
-            background: rgba(255, 107, 107, 0.1);
-            border-left-color: #ff6b6b;
-            transform: translateX(5px);
-        }
-
-        .dropdown-item i {
-            font-size: 1.2em;
-            width: 20px;
-            text-align: center;
-            color: #ff6b6b;
-        }
-
-        .dropdown-item span {
-            font-weight: 500;
-            font-size: 1.1em;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .dropdown-menu {
-                width: 60%;
-                max-width: none;
-                min-width: 280px;
-            }
-
-            .dropdown-item {
-                padding: 0.8rem 1.5rem;
-            }
-
-            .dropdown-item span {
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .dropdown-menu {
-                width: 70%;
-                min-width: 250px;
-            }
-
-            .dropdown-item {
-                padding: 0.7rem 1.2rem;
-            }
-
-            .dropdown-item i {
-                font-size: 1.1em;
-            }
-
-            .dropdown-item span {
-                font-size: 0.95em;
-            }
-        }
-
-        /* Smooth scrolling for dropdown navigation */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Animation for dropdown items */
-        .dropdown-menu.active .dropdown-item {
-            animation: slideInLeft 0.3s ease forwards;
-        }
-
-        .dropdown-item:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .dropdown-item:nth-child(2) {
-            animation-delay: 0.15s;
-        }
-
-        .dropdown-item:nth-child(3) {
-            animation-delay: 0.2s;
-        }
-
-        .dropdown-item:nth-child(4) {
-            animation-delay: 0.25s;
-        }
-
-        .dropdown-item:nth-child(5) {
-            animation-delay: 0.3s;
-        }
-
-        .dropdown-item:nth-child(6) {
-            animation-delay: 0.35s;
-        }
-
-        .dropdown-item:nth-child(7) {
-            animation-delay: 0.4s;
-        }
-
-        .dropdown-item:nth-child(8) {
-            animation-delay: 0.45s;
-        }
-
-        .dropdown-item:nth-child(9) {
-            animation-delay: 0.5s;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Ensure dropdown doesn't interfere with existing layout */
-        .main-header {
-            position: relative;
-        }
-
-        .main-header .container {
-            position: relative;
-        }
-
-        /* Tour controls positioning adjustment */
-        .tour-controls {
-            position: relative;
-            z-index: 1000;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/certificate.css">
+    <link rel="stylesheet" href="../css/ai.css">
 
 </head>
 
@@ -288,7 +39,7 @@
         <div class="container">
             <button class="logo dropdown-toggle" id="dropdown-toggle" aria-expanded="false"
                 aria-controls="dropdown-menu">
-                &ltCode<span class="highlight">With</span>Pritom&gt;
+                &ltCodeWithPritom&gt;
                 <i class="fas fa-chevron-down dropdown-icon"></i>
             </button>
 
@@ -480,6 +231,168 @@
             </div>
         </section>
 
+        
+<section id="ai-expertise" class="section-padding">
+    <div class="container">
+        <h2 class="tour-anim-item">AI <span class="highlight">&</span> Innovation</h2>
+        <p class="ai-intro tour-anim-item" style="max-width: 700px; margin: 0 auto 3rem; text-align: center;">
+            Leveraging cutting-edge AI technologies to enhance productivity, creativity, and problem-solving capabilities in modern development workflows.
+        </p>
+        
+        <div class="ai-expertise-grid">
+            <!-- Text & Code AI -->
+            <div class="ai-category tour-anim-item">
+                <div class="ai-category-header">
+                    <i class="fas fa-brain"></i>
+                    <h3>Text & Code AI</h3>
+                </div>
+                <div class="ai-tools">
+                    <div class="ai-tool">
+                        <div class="ai-tool-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="ai-tool-content">
+                            <h4>ChatGPT</h4>
+                            <p>Advanced conversational AI for problem-solving, code generation, and creative writing</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tool">
+                        <div class="ai-tool-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="ai-tool-content">
+                            <h4>Google Gemini</h4>
+                            <p>Multi-modal AI for complex reasoning, code analysis, and content creation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tool">
+                        <div class="ai-tool-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="ai-tool-content">
+                            <h4>Claude</h4>
+                            <p>Anthropic's AI assistant for detailed analysis, coding, and ethical AI interactions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tool">
+                        <div class="ai-tool-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div class="ai-tool-content">
+                            <h4>Microsoft Copilot</h4>
+                            <p>Integrated AI assistant for productivity, coding, and Microsoft ecosystem workflows</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tool">
+                        <div class="ai-tool-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="ai-tool-content">
+                            <h4>Perplexity AI</h4>
+                            <p>AI-powered search and research assistant for real-time information and analysis</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tool">
+                        <div class="ai-tool-icon">
+                            <i class="fas fa-deep-learning"></i>
+                        </div>
+                        <div class="ai-tool-content">
+                            <h4>DeepSeek</h4>
+                            <p>Advanced AI model for complex reasoning, mathematics, and code generation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Creative AI -->
+            <div class="ai-category tour-anim-item">
+                <div class="ai-category-header">
+                    <i class="fas fa-palette"></i>
+                    <h3>Creative AI</h3>
+                </div>
+                <div class="ai-tools">
+                    <div class="ai-tool">
+                        <div class="ai-tool-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="ai-tool-content">
+                            <h4>Suno AI</h4>
+                            <p>AI-powered music generation for creating original soundtracks and compositions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="ai-tool">
+                        <div class="ai-tool-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="ai-tool-content">
+                            <h4>DaVinci Resolve</h4>
+                            <p>Professional video editing with AI-enhanced features for color correction and effects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Development AI -->
+            <div class="ai-category tour-anim-item">
+                <div class="ai-category-header">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Development AI</h3>
+                </div>
+                <div class="ai-tools">
+                    <div class="ai-tool">
+                        <div class="ai-tool-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="ai-tool-content">
+                            <h4>Google AI Studio</h4>
+                            <p>Experimental AI platform for building and testing AI-powered applications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI Skills Summary -->
+        <div class="ai-skills-summary tour-anim-item">
+            <h3>AI-Enhanced Capabilities</h3>
+            <div class="ai-skills-list">
+                <div class="ai-skill">
+                    <i class="fas fa-code"></i>
+                    <span>Code Generation & Optimization</span>
+                </div>
+                <div class="ai-skill">
+                    <i class="fas fa-bug"></i>
+                    <span>Debugging & Error Resolution</span>
+                </div>
+                <div class="ai-skill">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Creative Problem Solving</span>
+                </div>
+                <div class="ai-skill">
+                    <i class="fas fa-rocket"></i>
+                    <span>Rapid Prototyping</span>
+                </div>
+                <div class="ai-skill">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Data Analysis & Insights</span>
+                </div>
+                <div class="ai-skill">
+                    <i class="fas fa-pen-fancy"></i>
+                    <span>Content Creation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+
         <!-- 4. 3D Model Section (#tech-showcase) -->
         <section id="tech-showcase" class="section-padding text-center">
             <div class="container">
@@ -652,6 +565,92 @@
         </section>
     -->
 
+
+    <!-- Mobile-Optimized Certificate Section -->
+<section id="certificates" class="section-padding">
+    <div class="container">
+        <h2 class="tour-anim-item">My <span class="highlight">Achievements</span></h2>
+        <p class="text-center tour-anim-item mobile-subtitle">
+            Browse my certificates by category. Tap to view details.
+        </p>
+
+        <!-- Mobile-Friendly Category Selector -->
+        <div class="certificate-controls tour-anim-item">
+            <div class="category-selector">
+                <button class="category-dropdown-btn" id="category-dropdown-btn" aria-expanded="false">
+                    <span id="selected-category">Select Category</span>
+                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                </button>
+                <div class="category-dropdown-content" id="category-dropdown">
+                    <button class="category-option active" data-category="technical">
+                        <i class="fas fa-laptop-code"></i> Technical
+                    </button>
+                    <button class="category-option" data-category="problem-solving">
+                        <i class="fas fa-puzzle-piece"></i> Problem Solving
+                    </button>
+                    <button class="category-option" data-category="creative">
+                        <i class="fas fa-paint-brush"></i> Creative
+                    </button>
+                    <button class="category-option" data-category="academic">
+                        <i class="fas fa-graduation-cap"></i> Academic
+                    </button>
+                    <button class="category-option" data-category="religious">
+                        <i class="fas fa-pray"></i> Religious
+                    </button>
+                    <button class="category-option" data-category="speech">
+                        <i class="fas fa-comments"></i> Speech
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Touch-Optimized Slider Container -->
+        <div class="certificate-sliders-container">
+            <!-- Technical Skills Slider -->
+            <div class="certificate-slider active" data-category="technical">
+                <div class="slider-header">
+                    <h3 class="slider-title"><i class="fas fa-laptop-code"></i> Technical</h3>
+                    <div class="slider-dots"></div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./images/certificates/tech1.jpg" alt="IoT Bootcamp Certificate" loading="lazy">
+                            </div>
+                            <div class="certificate-info">
+                                <h4>IoT Bootcamp</h4>
+                                <p>Gobeshona Learning Academy</p>
+                                <span class="certificate-date">Jul 2025</span>
+                            </div>
+                        </div>
+                        <div class="certificate-card">
+                            <div class="certificate-image">
+                                <img src="./images/certificates/tech2.jpg" alt="Programming Fundamentals Certificate" loading="lazy">
+                            </div>
+                            <div class="certificate-info">
+                                <h4>Programming Fundamentals</h4>
+                                <p>EWU Programming Club</p>
+                                <span class="certificate-date">May 2025</span>
+                            </div>
+                        </div>
+                        <!-- Add more cards as needed -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other category sliders (same structure) -->
+        </div>
+
+        <!-- Mobile View All Button -->
+        <div class="text-center tour-anim-item mobile-view-all">
+            <button id="view-all-certificates" class="btn mobile-btn">
+                <i class="fas fa-images"></i> View All Certificates
+            </button>
+        </div>
+    </div>
+</section>
+
         <!-- 8. Contact Section -->
         <section id="contact" class="section-padding">
             <div class="container">
@@ -728,7 +727,7 @@
 
     <!-- Hidden Audio Player for Tour -->
     <audio id="background-audio" loop preload="metadata">
-        <source src="audio/background-music.mp3" type="audio/mpeg"> <!-- REPLACE WITH YOUR AUDIO PATH -->
+        <source src="audio/me.mp3" type="audio/mpeg"> <!-- REPLACE WITH YOUR AUDIO PATH -->
         Your browser doesn't support audio playback.
     </audio>
 
@@ -750,112 +749,11 @@
 
     <!-- Custom JavaScript -->
     <script src="js/script.js"> </script>
+    <script src="../js/certificate.js"></script>
+    <script src="../js/ai.js"></script>
 
     <script>
-        // Dropdown Menu Functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownToggle = document.getElementById('dropdown-toggle');
-            const dropdownMenu = document.getElementById('dropdown-menu');
-            const dropdownOverlay = document.getElementById('dropdown-overlay');
-            const dropdownItems = document.querySelectorAll('.dropdown-item');
 
-            // Toggle dropdown menu
-            function toggleDropdown() {
-                const isOpen = dropdownToggle.getAttribute('aria-expanded') === 'true';
-
-                if (isOpen) {
-                    closeDropdown();
-                } else {
-                    openDropdown();
-                }
-            }
-
-            // Open dropdown menu
-            function openDropdown() {
-                dropdownToggle.setAttribute('aria-expanded', 'true');
-                dropdownMenu.classList.add('active');
-                dropdownOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            }
-
-            // Close dropdown menu
-            function closeDropdown() {
-                dropdownToggle.setAttribute('aria-expanded', 'false');
-                dropdownMenu.classList.remove('active');
-                dropdownOverlay.classList.remove('active');
-                document.body.style.overflow = ''; // Restore background scrolling
-            }
-
-            // Event listeners
-            dropdownToggle.addEventListener('click', toggleDropdown);
-
-            // Close dropdown when clicking on overlay
-            dropdownOverlay.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                closeDropdown();
-            });
-
-            // Prevent menu from closing when clicking inside the menu
-            dropdownMenu.addEventListener('click', function (e) {
-                e.stopPropagation();
-            });
-
-            // Close dropdown when clicking outside (on document)
-            document.addEventListener('click', function (e) {
-                if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                    closeDropdown();
-                }
-            });
-
-            // Close dropdown when clicking on menu items
-            dropdownItems.forEach(item => {
-                item.addEventListener('click', function (e) {
-                    // Allow the navigation to happen, then close dropdown
-                    setTimeout(closeDropdown, 100);
-                });
-            });
-
-            // Close dropdown on escape key
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && dropdownMenu.classList.contains('active')) {
-                    closeDropdown();
-                }
-            });
-
-            // Handle window resize
-            window.addEventListener('resize', function () {
-                if (window.innerWidth > 768 && dropdownMenu.classList.contains('active')) {
-                    closeDropdown();
-                }
-            });
-
-            // Smooth scrolling for dropdown navigation links
-            dropdownItems.forEach(item => {
-                item.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-
-                    // Check if it's an internal link (starts with #)
-                    if (href && href.startsWith('#') && href !== '#resume-download') {
-                        e.preventDefault();
-
-                        const targetId = href.substring(1);
-                        const targetElement = document.getElementById(targetId);
-
-                        if (targetElement) {
-                            // Calculate offset for fixed header
-                            const headerHeight = document.querySelector('.main-header').offsetHeight;
-                            const targetPosition = targetElement.offsetTop - headerHeight - 20;
-
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-        });
     </script>
 
 
